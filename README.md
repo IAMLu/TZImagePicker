@@ -2,13 +2,13 @@
  A clone of UIImagePickerController, support picking multiple photos、original photo、video, also allow preview photo and video, fitting iOS6789 system.   
  一个支持多选、选原图和视频的图片选择器，同时有预览功能，适配了iOS6789系统。
  
- ![image](https://github.com/banchichen/TZImagePickerController/blob/master/TZImagePickerController/ScreenShots/photoPickerVc.PNG) 
- ![image](https://github.com/banchichen/TZImagePickerController/blob/master/TZImagePickerController/ScreenShots/photoPreviewVc.PNG) 
- ![image](https://github.com/banchichen/TZImagePickerController/blob/master/TZImagePickerController/ScreenShots/videoPlayerVc.PNG) 
+ ![image](https://github.com/gewill/TZImagePickerController/blob/master/TZImagePickerController/ScreenShots/photoPickerVc.PNG) 
+ ![image](https://github.com/gewill/TZImagePickerController/blob/master/TZImagePickerController/ScreenShots/photoPreviewVc.PNG) 
+ ![image](https://github.com/gewill/TZImagePickerController/blob/master/TZImagePickerController/ScreenShots/videoPlayerVc.PNG) 
 
 ## 一. Installation 安装
 
-  * CocoaPods：pod 'TZImagePickerController'
+  * CocoaPods：pod 'TZImagePicker'
   * 手动导入：将TZImagePickerController文件夹拽入项目中，导入头文件：#import "TZImagePickerController.h"
 
 ## 二. Example 例子
@@ -38,5 +38,8 @@
   More infomation please view code.  
   如果你发现了bug，请提一个issue。  
   欢迎给我提pull requests。  
-  更多信息详见代码，也可查看我的博客: [我的博客](http://www.cnblogs.com/tanzhenblog/ "半尺尘 - 博客园")
+
+## 五. License 许可证
+
+[MIT](https://github.com/gewill/TZImagePickerController/blob/master/LICENSE)
   
