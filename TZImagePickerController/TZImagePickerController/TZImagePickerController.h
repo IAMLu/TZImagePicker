@@ -34,6 +34,12 @@
 /// 默认为YES，如果设置为NO,用户将不能选择发送图片
 @property(nonatomic, assign) BOOL allowPickingImage;
 
+
+/// Default is YES.if set NO, user can't preview video.
+/// 默认为YES，如果设置为NO,用户将不能预览视频
+@property(nonatomic, assign) BOOL shouldPreviewVideo;
+
+
 - (void)showAlertWithTitle:(NSString *)title;
 - (void)showProgressHUD;
 - (void)hideProgressHUD;
@@ -78,5 +84,7 @@
 
 
 @interface TZAlbumPickerController : UIViewController
+
+@property(nonatomic, assign) BOOL shouldPreviewVideo;
 
 @end

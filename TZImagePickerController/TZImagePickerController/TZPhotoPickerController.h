@@ -11,6 +11,8 @@
 @class TZAlbumModel;
 @interface TZPhotoPickerController : UIViewController
 
-@property (nonatomic, strong) TZAlbumModel *model;
+@property(nonatomic, strong) TZAlbumModel *model;
+
+@property(nonatomic, assign) BOOL shouldPreviewVideo;
 
 @end

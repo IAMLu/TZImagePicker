@@ -73,6 +73,7 @@
 
 - (instancetype)initWithMaxImagesCount:(NSInteger)maxImagesCount delegate:(id<TZImagePickerControllerDelegate>)delegate {
     TZAlbumPickerController *albumPickerVc = [[TZAlbumPickerController alloc] init];
+    albumPickerVc.shouldPreviewVideo = _shouldPreviewVideo;
     self = [super initWithRootViewController:albumPickerVc];
     if (self) {
         self.maxImagesCount = maxImagesCount > 0 ? maxImagesCount : 9; // Default is 9 / 默认最大可选9张图片
@@ -82,6 +83,7 @@
         _allowPickingOriginalPhoto = YES;
         _allowPickingVideo = YES;
         _allowPickingImage = YES;
+        _shouldPreviewVideo = YES;
         
         if (![[TZImageManager manager] authorizationStatusAuthorized]) {
             _tipLable = [[UILabel alloc] init];
@@ -193,7 +195,10 @@
 @interface TZAlbumPickerController ()<UITableViewDataSource,UITableViewDelegate> {
     UITableView *_tableView;
     NSMutableArray *_albumArr;
+    
 }
+
+
 
 @end
 
@@ -260,6 +265,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     TZPhotoPickerController *photoPickerVc = [[TZPhotoPickerController alloc] init];
     photoPickerVc.model = _albumArr[indexPath.row];
+    photoPickerVc.shouldPreviewVideo = _shouldPreviewVideo;
     [self.navigationController pushViewController:photoPickerVc animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }

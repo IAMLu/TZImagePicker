@@ -89,7 +89,8 @@
     // Set allow picking video & originalPhoto or not
     // 设置是否可以选择视频/原图
 //     imagePickerVc.allowPickingVideo = NO;
-//     imagePickerVc.allowPickingImage = NO;
+     imagePickerVc.allowPickingImage = NO;
+    imagePickerVc.shouldPreviewVideo = NO;
     // imagePickerVc.allowPickingOriginalPhoto = NO;
     
     [self presentViewController:imagePickerVc animated:YES completion:nil];
@@ -115,7 +116,9 @@
 /// 用户选择好了视频
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingVideo:(UIImage *)coverImage sourceAssets:(id)asset {
     [_selectedPhotos addObjectsFromArray:@[coverImage]];
+    dispatch_async(dispatch_get_main_queue(), ^{
     [_collectionView reloadData];
+    });
     _collectionView.contentSize = CGSizeMake(0, ((_selectedPhotos.count + 2) / 3 ) * (_margin + _itemWH));
 }
 
